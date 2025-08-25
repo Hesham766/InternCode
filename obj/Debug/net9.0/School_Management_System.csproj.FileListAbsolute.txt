@@ -1,0 +1,14 @@
+W:\Code Files\C#\School_Management_System\bin\Debug\net9.0\School_Management_System.exe
+W:\Code Files\C#\School_Management_System\bin\Debug\net9.0\School_Management_System.deps.json
+W:\Code Files\C#\School_Management_System\bin\Debug\net9.0\School_Management_System.runtimeconfig.json
+W:\Code Files\C#\School_Management_System\bin\Debug\net9.0\School_Management_System.dll
+W:\Code Files\C#\School_Management_System\bin\Debug\net9.0\School_Management_System.pdb
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.GeneratedMSBuildEditorConfig.editorconfig
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.AssemblyInfoInputs.cache
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.AssemblyInfo.cs
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.csproj.CoreCompileInputs.cache
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.dll
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\refint\School_Management_System.dll
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.pdb
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\School_Management_System.genruntimeconfig.cache
+W:\Code Files\C#\School_Management_System\obj\Debug\net9.0\ref\School_Management_System.dll
