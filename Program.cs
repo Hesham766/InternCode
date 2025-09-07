@@ -56,6 +56,8 @@ namespace School_Management_System
                             Console.WriteLine("Name: Data Structures --- Code: DSA101");
                             Console.WriteLine("======================================");
 
+
+                            #region Using AI Co-Pilot
                             Console.WriteLine("\nEnter Course Code to enroll: ");
                             var inputCode = Console.ReadLine()?.Trim();
                             var selectedCourse = courses.FirstOrDefault(course => string.Equals(course.Code, inputCode));
@@ -63,6 +65,8 @@ namespace School_Management_System
                             Console.WriteLine("\nEnter Student ID to enroll: ");
                             var inputId = Console.ReadLine()?.Trim();
                             var student = students.FirstOrDefault(student => student.Id == int.Parse(inputId));
+                            #endregion
+
 
                             if (selectedCourse != null && int.TryParse(inputId, out int studentId))
                             {
@@ -111,7 +115,7 @@ namespace School_Management_System
                             }
                             break;
 
-                        case 5:
+                        case 5: // need to be fixed
                             Console.WriteLine("=== View Grades ===");
                             Console.WriteLine("Enter StudentID: ");
                             var studentIdInput = int.Parse(Console.ReadLine());
