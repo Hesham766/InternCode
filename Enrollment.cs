@@ -21,32 +21,5 @@ namespace School_Management_System
             DateEnrolled = DateTime.Now;
             this.Grade = Grade;
         }
-
-        public void AssignGrade(char grade)
-        {
-
-            char upperGrade = char.ToUpper(grade);
-            // Simplified grade validation
-            if (upperGrade == 'A' || upperGrade == 'B' || upperGrade == 'C' || upperGrade == 'D' || upperGrade == 'F')
-            {
-                Console.WriteLine($"Grade '{Grade}' assigned to {Student.Name} for course {Course.Title}.");
-            }
-            else
-            {
-                Console.WriteLine("Error: Invalid grade. Please use A, B, C, D, or F.");
-            }
-        }
-
-        // Enrollment.ViewGrade() → views the assigned grade
-        public void ViewGrade(Student student, Course course)
-        {
-            if (Grade != null)
-            {
-                Console.WriteLine($"Student: {student.Name}\nCourse: {course.Title}\nAssigned Grade: {Grade}\n");
-            }
-            else
-                Console.WriteLine("No grade assigned yet.");
-
-            }
-        }
     }
+}

@@ -44,20 +44,5 @@ namespace School_Management_System
             Title = title;
             Credits = credits;
         }
-        public void AddStudent(Student student)
-        {
-            if (!EnrolledStudents.Contains(student))
-            {
-                EnrolledStudents.Add(student);
-            }
-        }
-
-        public void RemoveStudent(Student student)
-        {
-            if (EnrolledStudents.Contains(student))
-            {
-                EnrolledStudents.Remove(student);
-            }
-        }
     }
 }
