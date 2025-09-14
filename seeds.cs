@@ -1,25 +1,36 @@
 using System;
 using System.Text;
+using System.Collections.Generic;
 
-public class seeds
+namespace School_Management_System
 {
-    
-    List<Course> courses = new List<Course> { course1, course2, course3, course4, course5 };
+    public class Seeds
+    {
+        Course course1 = new Course(1, "MAT101", "Calculus I", 4);
+        Course course2 = new Course(2, "PHY101", "Physics I", 2);
+        Course course3 = new Course(3, "STA101", "Statistics & Probability", 2);
+        Course course4 = new Course(4, "CSE101", "Introduction to Programming", 3);
+        Course course5 = new Course(5, "DSA101", "Data Structures", 3);
+        public List<Course> courses { get; set; }
+        public List<Course> Courses { get; private set; }
 
-    Course course1 = new Course(1, "MAT101", "Calculus I", 4);
-    Course course2 = new Course(2, "PHY101", "Physics I", 2);
-    Course course3 = new Course(3, "STA101", "Statistics & Probability", 2);
-    Course course4 = new Course(4, "CSE101", "Introduction to Programming", 3);
-    Course course5 = new Course(5, "DSA101", "Data Structures", 3);
+        Student student1 = new Student(111, "Hesham", "hesham@example.com", "1111");
+        Student student2 = new Student(222, "Eslam", "eslam@example.com", "2222");
+        Student student3 = new Student(333, "Farag", "farag@example.com", "3333");
+        Student student4 = new Student(444, "Fat7y", "fat7y@example.com", "4444");
+        Student student5 = new Student(555, "Adel", "adel@example.com", "5555");
+        public List<Student> students { get; set; }
+        public List<Student> Students { get; private set; }
 
-    
-    List<Student> students = new List<Student> { student1, student2, student3 };
+        public Seeds()
+        {
+            var courseList = new List<Course> { course1, course2, course3, course4, course5 };
+            courses = courseList;
+            Courses = courseList;
 
-    Student student1 = new Student(000, "Hesham", "hesham@example.com", "0000");
-    Student student2 = new Student(111, "Eslam", "eslam@example.com", "1111");
-    Student student4 = new Student(222, "Farag", "farag@example.com", "2222");
-    Student student5 = new Student(333, "Fat7y", "fat7y@example.com", "3333");
-    Student student6 = new Student(444, "Adel", "adel@example.com", "4444");
-
-    
+            var studentList = new List<Student> { student1, student2, student3, student4, student5 };
+            students = studentList;
+            Students = studentList;
+        }
+    }
 }
