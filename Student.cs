@@ -1,7 +1,3 @@
-using System;
-using System.Linq;
-using System.Text;
-
 namespace School_Management_System
 {
     public class Student
@@ -10,7 +6,7 @@ namespace School_Management_System
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; private set; }
-        public List<Course> EnrolledCourses { get; private set; }
+        public List<Course> EnrolledCourses { get; set; }
 
         public Student(int id, string name, string email, string password)
         {
