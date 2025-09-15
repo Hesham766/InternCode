@@ -1,18 +1,83 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Collections.Generic;
-using School_Management_System;
-
-
-namespace School_Management_System
+﻿namespace School_Management_System
 {
     class Program
     {
         static void Main(string[] args)
         {
 
+            ConsoleLogs logs = new ConsoleLogs();
+            List<Course> EnrolledCourses = new List<Course>();
+            List<Student> EnrolledStudents = new List<Student>();
+            var enrollments = new List<Enrollment>();
+            var seed = new Seeds();
+            var courses = seed.courses;
+            var students = seed.students;
+
+            IStudentServices enrollService = new EnrollInCourse();
+            IStudentServices dropService = new DropCourse();
+            IStudentServices assignGradeService = new AssignGrades();
+            IStudentServices viewGradeService = new ViewGrades();
+
+
+            bool flag = true;
+
+            while (flag)
+            {
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+
+                if (!int.TryParse(Console.ReadLine(), out int choice))
+                {
+                    logs.MainMenu();
+                    switch (choice)
+                    {
+                        case 1:
+
+                            logs.CoursesList();
+
+                            Console.WriteLine("Enter Course Code to enroll: ");
+                            var courseCode = Console.ReadLine();
+
+                            Console.WriteLine("Enter Student ID to enroll: ");
+                            var studentId = Console.ReadLine();
+
+                            // enrollService.Enroll_Drop(studentId, courseCode);
+                            // EnrolledCourses.Add(courses);
+                            break;
+
+                        case 2:
+                            break;
+
+                        case 3:
+                            break;
+
+                        case 4:
+                            break;
+
+                        case 9:
+                            Console.Beep(1000, 500);
+                            Console.Clear();
+                            Console.WriteLine("Thank you for using the School Management System. Goodbye!");
+                            flag = false;
+                            break;
+
+                        default:
+                            Console.WriteLine("Invalid choice. Please try again.");
+                            break;
+                    }
+                }
+            }
+
+            /*
+            List<Course> EnrolledCourses = new List<Course>();
+            ConsoleLogs Logs = new ConsoleLogs();
+            var seed = new Seeds();
+            var courses = seed.courses;
+            var students = seed.students;
+                }
+                
+            }
+
+            /*
             List<Course> EnrolledCourses = new List<Course>();
             ConsoleLogs Logs = new ConsoleLogs();
             var seed = new Seeds();
@@ -159,6 +224,7 @@ namespace School_Management_System
                     Console.WriteLine("Invalid input. Please enter a valid number: ");
                 }
             }
+            */
         }
     }
 }

@@ -12,7 +12,6 @@ namespace School_Management_System
         Course course4 = new Course(4, "CSE101", "Introduction to Programming", 3);
         Course course5 = new Course(5, "DSA101", "Data Structures", 3);
         public List<Course> courses { get; set; }
-        public List<Course> Courses { get; private set; }
 
         Student student1 = new Student(111, "Hesham", "hesham@example.com", "1111");
         Student student2 = new Student(222, "Eslam", "eslam@example.com", "2222");
@@ -20,17 +19,14 @@ namespace School_Management_System
         Student student4 = new Student(444, "Fat7y", "fat7y@example.com", "4444");
         Student student5 = new Student(555, "Adel", "adel@example.com", "5555");
         public List<Student> students { get; set; }
-        public List<Student> Students { get; private set; }
 
         public Seeds()
         {
             var courseList = new List<Course> { course1, course2, course3, course4, course5 };
             courses = courseList;
-            Courses = courseList;
-
+            
             var studentList = new List<Student> { student1, student2, student3, student4, student5 };
             students = studentList;
-            Students = studentList;
         }
     }
 }
