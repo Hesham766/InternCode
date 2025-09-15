@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "W:\\Code Files\\GitHub Repos\\Strategy_Pattern\\School_Management_System.csproj": {}
+    "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj": {}
   },
   "projects": {
-    "W:\\Code Files\\GitHub Repos\\Strategy_Pattern\\School_Management_System.csproj": {
+    "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\Code Files\\GitHub Repos\\Strategy_Pattern\\School_Management_System.csproj",
+        "projectUniqueName": "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj",
         "projectName": "School_Management_System",
-        "projectPath": "W:\\Code Files\\GitHub Repos\\Strategy_Pattern\\School_Management_System.csproj",
+        "projectPath": "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj",
         "packagesPath": "C:\\Users\\royna\\.nuget\\packages\\",
-        "outputPath": "W:\\Code Files\\GitHub Repos\\Strategy_Pattern\\obj\\",
+        "outputPath": "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
