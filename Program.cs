@@ -34,6 +34,7 @@ namespace School_Management_System
                             Logs.CoursesList();
 
                             #region Using AI Co-Pilot
+
                             Console.WriteLine("\nEnter Course Code to enroll: ");
                             var inputCode = Console.ReadLine()?.Trim();
                             var selectedCourse = courses.FirstOrDefault(course => string.Equals(course.Code, inputCode, StringComparison.OrdinalIgnoreCase));
@@ -49,20 +50,26 @@ namespace School_Management_System
                             {
                                 if (student != null)
                                 {
+                                    Console.Clear();
                                     Methods.EnrollInCourse(student, selectedCourse);
                                     EnrolledCourses.Add(selectedCourse);
                                     enrollments.Add(new Enrollment(student, selectedCourse, '\0'));
+
                                 }
                                 else
                                 {
                                     Console.WriteLine("Student not found. Please check the student ID and try again.");
+                                    Console.Clear();
                                 }
                             }
                             else
                             {
                                 Console.WriteLine("Course not found. Please check the course code and try again.");
+
+                                Console.Clear();
                             }
                             break;
+
 
                         case 2:
                             Console.WriteLine("=== Drop Course ===");
@@ -95,8 +102,8 @@ namespace School_Management_System
                                 Console.WriteLine("Course not found. Please check the course code and try again.");
                             }
                             break;
-                            #endregion
-                            
+                        #endregion
+
                         case 3:
                             Console.WriteLine("=== View Enrolled Courses ===");
                             foreach (var enrolledCourse in EnrolledCourses)
