@@ -14,10 +14,5 @@ namespace School_Management_System
             Grade = grade;
             EnrollmentDate = enrollmentDate = DateTime.Now;
         }
-        
-        override public string ToString()
-        {
-            return $"{Student.Name} enrolled in {Course.Title} with grade {Grade} on {EnrollmentDate}";
-        }
     }
 }

@@ -6,17 +6,15 @@
         {
 
             ConsoleLogs logs = new ConsoleLogs();
-            List<Course> EnrolledCourses = new List<Course>();
-            List<Student> EnrolledStudents = new List<Student>();
-            var enrollments = new List<Enrollment>();
-            var seed = new Seeds();
-            var courses = seed.courses;
-            var students = seed.students;
+            Student student = new Seeds().students[0];
+            Course course = new Seeds().courses[0];
+            
 
             IStudentServices enrollService = new EnrollInCourse();
             IStudentServices dropService = new DropCourse();
             IStudentServices assignGradeService = new AssignGrades();
             IStudentServices viewGradeService = new ViewGrades();
+
 
 
             bool flag = true;
@@ -31,7 +29,7 @@
                     switch (choice)
                     {
                         case 1:
-
+                            // Enroll in course
                             logs.CoursesList();
 
                             Console.WriteLine("Enter Course Code to enroll: ");
@@ -40,17 +38,26 @@
                             Console.WriteLine("Enter Student ID to enroll: ");
                             var studentId = Console.ReadLine();
 
-                            // enrollService.Enroll_Drop(studentId, courseCode);
-                            // EnrolledCourses.Add(courses);
                             break;
 
                         case 2:
+                            // Drop Course
+
                             break;
 
                         case 3:
+                            // view enrolled courses
+
                             break;
 
                         case 4:
+                            // assign grade
+                        
+                            break;
+
+                        case 5:
+                            // view grades
+                            
                             break;
 
                         case 9:
