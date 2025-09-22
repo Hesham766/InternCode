@@ -14,9 +14,4 @@ public class EnrollInCourse : IStudentServices
         course.EnrolledStudents.Add(student);
         return $"{student.Name} has been enrolled in {course.Title}\n";
     }
-    public void DisplayEnrolledCourses(Student student, Course course)
-    {
-        foreach (var items in student.EnrolledCourses)
-            Console.WriteLine($"Enrolled Courses: {items.Title}\n");
-    }
 }

@@ -1,48 +1,95 @@
-﻿namespace School_Management_System
+﻿using System.Runtime.CompilerServices;
+
+namespace School_Management_System
 {
     class Program
     {
+        public void DisplayEnrolledCourses(Student student, Course course)
+        {
+            foreach (var items in student.EnrolledCourses)
+                Console.WriteLine($"Enrolled Courses: {items.Title}\n");
+        }
         static void Main(string[] args)
         {
+            // IStudentServices enrollService = new EnrollInCourse();
+            // IStudentServices dropService = new DropCourse();
+            // IStudentServices assignGradeService = new AssignGrades();
+            // IStudentServices viewGradeService = new ViewGrades();
 
-            ConsoleLogs logs = new ConsoleLogs();
-            Student student = new Seeds().students[0];
-            Course course = new Seeds().courses[0];
-            
-
-            IStudentServices enrollService = new EnrollInCourse();
-            IStudentServices dropService = new DropCourse();
-            IStudentServices assignGradeService = new AssignGrades();
-            IStudentServices viewGradeService = new ViewGrades();
+            var context = new StudentContext(new EnrollInCourse());
 
 
+            var courses = Seeds.courses;
+            var students = Seeds.students;
+            var enrollments = new List<Enrollment>();
 
             bool flag = true;
+            int choice;
 
             while (flag)
             {
-                Console.BackgroundColor = ConsoleColor.DarkBlue;
-
-                if (!int.TryParse(Console.ReadLine(), out int choice))
+                ConsoleLogs.MainMenu();
+                if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    logs.MainMenu();
                     switch (choice)
                     {
                         case 1:
                             // Enroll in course
-                            logs.CoursesList();
+                            ConsoleLogs.CoursesList();
 
-                            Console.WriteLine("Enter Course Code to enroll: ");
-                            var courseCode = Console.ReadLine();
+                            Console.WriteLine("\nEnter Course Code to enroll: ");
+                            var inputCode = Console.ReadLine()?.Trim();
+                            var selectedCourse = courses.FirstOrDefault(course => string.Equals(course.Code, inputCode, StringComparison.OrdinalIgnoreCase));
 
-                            Console.WriteLine("Enter Student ID to enroll: ");
-                            var studentId = Console.ReadLine();
+                            Console.WriteLine("\nEnter Student ID to enroll: ");
+                            uint parsedInputId;
+                            flag = true;
+                            do
+                                flag = uint.TryParse(Console.ReadLine()?.Trim(), out parsedInputId);
+                            while (!flag);
+                            var selectedStudent = students.FirstOrDefault(student => student.Id == parsedInputId);
 
+                            if (selectedCourse != null && selectedStudent != null)
+                            {
+                                context.ExecuteStrategy(selectedStudent, selectedCourse);
+                                enrollments.Add(new Enrollment(selectedStudent, selectedCourse, '\0', DateTime.Now));
+                            }
+                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine($"{selectedStudent.Name} has been enrolled in {selectedCourse.Title}.");
                             break;
 
                         case 2:
                             // Drop Course
 
+                            Console.WriteLine("\nEnter Student ID to drop: ");
+                            uint parsedInputId2;
+                            flag = true;
+                            do
+                                flag = uint.TryParse(Console.ReadLine()?.Trim(), out parsedInputId2);
+                            while (!flag);
+                            var selectedStudent2 = students.FirstOrDefault(student => student.Id == parsedInputId2);
+                           
+
+                            Console.WriteLine($"Courses Enrolled for {selectedStudent2.Name}:");
+                            // foreach (var course in selectedEnrolledCourses)
+                            // {
+                            //     Console.WriteLine($"- {course.Course.Title}");
+                            // }
+
+                            Console.WriteLine("\nEnter Course Code to drop: ");
+                            var inputCode2 = Console.ReadLine()?.Trim();
+                            var selectedCourse2 = courses.FirstOrDefault(course => string.Equals(course.Code, inputCode2, StringComparison.OrdinalIgnoreCase));
+
+                            if (selectedCourse2 != null && selectedStudent2 != null)
+                            {
+                                context.SetStrategy(new DropCourse());
+                                context.ExecuteStrategy(selectedStudent2, selectedCourse2);
+                                enrollments.Remove(new Enrollment(selectedStudent2, selectedCourse2, '\0', DateTime.Now));
+                            }
+                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine($"{selectedStudent2.Name} has been dropped from {selectedCourse2.Title}.");
                             break;
 
                         case 3:
@@ -52,17 +99,17 @@
 
                         case 4:
                             // assign grade
-                        
+
                             break;
 
                         case 5:
                             // view grades
-                            
+
                             break;
 
                         case 9:
-                            Console.Beep(1000, 500);
                             Console.Clear();
+                            Console.Beep(1000, 500);
                             Console.WriteLine("Thank you for using the School Management System. Goodbye!");
                             flag = false;
                             break;
@@ -73,6 +120,9 @@
                     }
                 }
             }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
             /*
             List<Course> EnrolledCourses = new List<Course>();

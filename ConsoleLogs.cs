@@ -1,8 +1,8 @@
 using System;
 
-public class ConsoleLogs
+public static class ConsoleLogs
 {
-    public void MainMenu()
+    public static void MainMenu()
     {
         Console.WriteLine("\n");
         Console.WriteLine("===  ============================ ===");
@@ -18,7 +18,7 @@ public class ConsoleLogs
         Console.Write("\nEnter Your Choice: ");
     }
 
-    public void CoursesList()
+    public static void CoursesList()
     {
         Console.WriteLine("============== Courses ==================");
         Console.WriteLine(" Name: Calculus I -------- Code: MAT101");
@@ -29,7 +29,7 @@ public class ConsoleLogs
         Console.WriteLine("=========================================");
     }
 
-    public void GradesList()
+    public static void GradesList()
     {
         Console.WriteLine("============== Grades ================");
         Console.WriteLine("   A --------------------> excellent");
