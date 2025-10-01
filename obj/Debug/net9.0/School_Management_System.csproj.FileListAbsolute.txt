@@ -27,3 +27,18 @@ C:\Users\royna\OneDrive\Documents\GitHub\InternCode\obj\Debug\net9.0\refint\Scho
 C:\Users\royna\OneDrive\Documents\GitHub\InternCode\obj\Debug\net9.0\School_Management_System.pdb
 C:\Users\royna\OneDrive\Documents\GitHub\InternCode\obj\Debug\net9.0\School_Management_System.genruntimeconfig.cache
 C:\Users\royna\OneDrive\Documents\GitHub\InternCode\obj\Debug\net9.0\ref\School_Management_System.dll
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.AssemblyInfoInputs.cache
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.AssemblyInfo.cs
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.csproj.CoreCompileInputs.cache
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.sourcelink.json
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.dll
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\refint\School_Management_System.dll
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.pdb
+D:\Code Files\Design Strategy\InternCode\bin\Debug\net9.0\School_Management_System.exe
+D:\Code Files\Design Strategy\InternCode\bin\Debug\net9.0\School_Management_System.deps.json
+D:\Code Files\Design Strategy\InternCode\bin\Debug\net9.0\School_Management_System.runtimeconfig.json
+D:\Code Files\Design Strategy\InternCode\bin\Debug\net9.0\School_Management_System.dll
+D:\Code Files\Design Strategy\InternCode\bin\Debug\net9.0\School_Management_System.pdb
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\School_Management_System.genruntimeconfig.cache
+D:\Code Files\Design Strategy\InternCode\obj\Debug\net9.0\ref\School_Management_System.dll
