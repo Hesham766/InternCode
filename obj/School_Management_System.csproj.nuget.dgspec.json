@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj": {}
+    "D:\\Code Files\\Design Strategy\\InternCode\\School_Management_System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj": {
+    "D:\\Code Files\\Design Strategy\\InternCode\\School_Management_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj",
+        "projectUniqueName": "D:\\Code Files\\Design Strategy\\InternCode\\School_Management_System.csproj",
         "projectName": "School_Management_System",
-        "projectPath": "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\School_Management_System.csproj",
-        "packagesPath": "C:\\Users\\royna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\royna\\OneDrive\\Documents\\GitHub\\InternCode\\obj\\",
+        "projectPath": "D:\\Code Files\\Design Strategy\\InternCode\\School_Management_System.csproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "D:\\Code Files\\Design Strategy\\InternCode\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\royna\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

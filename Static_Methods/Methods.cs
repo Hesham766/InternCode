@@ -1,0 +1,174 @@
+using School_Management_System;
+
+public static class Methods
+{
+    #region Input Methods
+
+    public static string ReadCourseCode(string prompt)
+    {
+        Console.WriteLine();
+        Logger.Info(prompt);
+        return Console.ReadLine()?.Trim() ?? string.Empty;
+    }
+
+    public static uint ReadStudentId(string prompt)
+    {
+        while (true)
+        {
+            Console.WriteLine();
+            Logger.Info(prompt);
+            var inputValue = Console.ReadLine()?.Trim();
+
+            if (uint.TryParse(inputValue, out var idValue))
+            {
+                return idValue;
+            }
+
+            Logger.Warning("Invalid Number. Enter a valid student ID.");
+        }
+    }
+
+    public static char ReadGrade(string prompt)
+    {
+        while (true)
+        {
+            Console.WriteLine();
+            Logger.Info(prompt);
+            var gradeInput = Console.ReadLine()?.Trim();
+
+            if (!string.IsNullOrWhiteSpace(gradeInput))
+            {
+                var gradeCharValue = char.ToUpperInvariant(gradeInput[0]);
+                if (gradeCharValue == 'A' || gradeCharValue == 'B' || gradeCharValue == 'C' || gradeCharValue == 'D' || gradeCharValue == 'F')
+                {
+                    return gradeCharValue;
+                }
+            }
+
+            Logger.Error("Invalid grade. Enter one of: A, B, C, D, F");
+        }
+    }
+
+    #endregion
+
+    #region Student Methods
+
+    // Student.Enroll(Course) → enrolls a student
+    // A student can enroll in a course. (static helper)
+    public static void EnrollInCourse(Student student, Course course)
+    {
+        if (course != null && !student.EnrolledCourses.Contains(course))
+        {
+            student.EnrolledCourses.Add(course); // Add course to student's list
+            AddStudent(course, student);          // Also tell the course helper to add this student
+            Logger.Success($"{student.Name} has been enrolled in {course.Title}.");
+        }
+        else
+        {
+            Logger.Error($"Student {student.Name} is already enrolled in {course?.Title} or the course is invalid.");
+        }
+    }
+
+    // A student can drop a course.
+    public static void DropCourse(Student student, Course course)
+    {
+        if (course != null && student.EnrolledCourses.Contains(course))
+        {
+            student.EnrolledCourses.Remove(course); // Remove course from student's list
+            RemoveStudent(course, student);          // Also tell the course helper to remove this student
+            Logger.Success($"{student.Name} has dropped {course.Title}.");
+        }
+        else
+        {
+            Logger.Error($"Student {student.Name} is not enrolled in {course?.Title}.");
+        }
+    }
+
+    // Display all courses this student is enrolled in.
+    public static void DisplayEnrolledCourses(Student student)
+    {
+        Logger.Info($"--- Courses for {student.Name} (ID: {student.Id}) ---");
+        if (student.EnrolledCourses.Count == 0)
+        {
+            Logger.Warning("Not enrolled in any courses.");
+        }
+        else
+        {
+            foreach (var course in student.EnrolledCourses)
+            {
+                Logger.Info($"- {course.Title} - ({course.Code})");
+            }
+        }
+        Logger.Info("------------------------------------");
+    }
+
+    #endregion
+
+    #region Course Methods
+
+    public static void AddStudent(Course course, Student student)
+    {
+        if (course == null || student == null) return;
+        if (!course.EnrolledStudents.Contains(student))
+        {
+            course.EnrolledStudents.Add(student);
+        }
+    }
+
+    public static void RemoveStudent(Course course, Student student)
+    {
+        if (course == null || student == null) return;
+        if (course.EnrolledStudents.Contains(student))
+        {
+            course.EnrolledStudents.Remove(student);
+        }
+    }
+
+    #endregion
+
+    #region Enrollment Methods
+
+    public static void AssignGrade(Enrollment enrollment, char grade)
+    {
+        if (enrollment == null)
+        {
+            Logger.Error("No Enrollments found");
+            return;
+        }
+
+        char upperGrade = char.ToUpper(grade);
+        // Simplified grade validation
+        if (upperGrade == 'A' || upperGrade == 'B' || upperGrade == 'C' || upperGrade == 'D' || upperGrade == 'F')
+        {
+            enrollment.Grade = upperGrade;
+            Logger.Success($"Grade '{enrollment.Grade}' assigned to {enrollment.Student.Name} for course {enrollment.Course.Title}.");
+        }
+        else
+        {
+            Logger.Error("Invalid grade. Please use A, B, C, D, or F.");
+        }
+    }
+
+    // Enrollment.ViewGrade() → views the assigned grade
+    public static void ViewGrade(Enrollment enrollment)
+    {
+        if (enrollment == null)
+        {
+            Logger.Error("No Enrollments found");
+            return;
+        }
+
+        if (enrollment.Grade != '\0')
+        {
+            Logger.Info($"Student: {enrollment.Student.Name}\nCourse: {enrollment.Course.Title}\nAssigned Grade: {enrollment.Grade}\n");
+        }
+        else
+        {
+            Logger.Warning("No grade assigned yet.");
+        }
+
+    }
+
+
+    #endregion
+}

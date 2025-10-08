@@ -1,10 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace School_Management_System
 {
     public class Course
@@ -32,11 +25,7 @@ namespace School_Management_System
 
         public string Title { get; set; }
         public int Credits { get; set; }
-
-        public List<Student> EnrolledStudents { get; set; } = new List<Student>();
-        public List<Course> EnrolledCourses { get; set; } = new List<Course>();
-
-        public Enrollment Enrollments { get; set; } 
+        public List<Student> EnrolledStudents { get; } = new();
         public Course(int id, string code, string title, int credits)
         {
             Id = id;

@@ -1,7 +1,3 @@
-using System;
-using System.Linq;
-using System.Text;
-
 namespace School_Management_System
 {
     public class Student
